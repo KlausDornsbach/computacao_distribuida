@@ -32,7 +32,7 @@ int main() {
         printf(in);
         write(sockfd, in, strlen(in));
         read(sockfd, &out, sizeof(int));
-        printf("result from server = %i\n", out);
+        printf("\nresult from server = %i\n", out);
     }
     close(sockfd);
     exit(0);

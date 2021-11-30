@@ -30,8 +30,13 @@ int main() {
         client_len = sizeof(client_address);
         client_sockfd = accept(server_sockfd, (struct sockaddr *)&client_address, &client_len);
         while (out != -1) {
-            read(client_sockfd, in, strlen(in));
+            int err = read(client_sockfd, in, sizeof(in));
+            if (err == -1) {
+                perror("Algo de errado na leitura");
+                exit(EXIT_FAILURE);
+            }
             operation(in, &out);
+            memset(in, 0, sizeof(in));
             write(client_sockfd, &out, sizeof(int));
         }
         close(client_sockfd);
