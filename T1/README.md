@@ -5,3 +5,4 @@
   - gcc client_t1.c -o client
 - run them on linux with the command ./server and ./client
 - profit. 
+## it should be noted that this server implementation can handle multiple parallel clients 
