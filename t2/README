@@ -1,0 +1,4 @@
+o trabalho eh um jogo da forca distribuido
+para executar:
+javac Hangman.java
+java Hangman
